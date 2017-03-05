@@ -1,4 +1,6 @@
 // Solution to AddTwoNumbers problem on LeetCode
+// Time Complexity: O(N)
+// Space Complexity: O(N) *Note: can probably be optimized to O(1)
 
 public class Solution
 {
