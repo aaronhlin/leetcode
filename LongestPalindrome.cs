@@ -1,6 +1,6 @@
 // Solution to LongestPalindrome problem on LeetCode
-// Time Complexity:  O(N)?
-// Space Complexity: O(N)
+// Time Complexity:  O(N^2)
+// Space Complexity: O(N) *Note: Can be optimized to O(1) if we store start and end instead of p
 
 public class Solution {
 
