@@ -1,25 +1,21 @@
 // Solution to MaxArea problem on LeetCode
-// Time Complexity:  O(NlogN)
-// Space Complexity: O(N)
+// Time Complexity:  O(N)
+// Space Complexity: O(1)
 
 public class Solution {
     public int MaxArea(int[] height) {
-        var sortedHeight = height.Select((value, index) => new {Value = value, Index = index})
-                                 .OrderByDescending(x => x.Value)
-                                 .ToArray();
-        
-        var maxArea       = 0;
-        var smallestIndex = sortedHeight[0].Index;
-        var largestIndex  = sortedHeight[0].Index;
+        var maxArea = 0;
+        var left = 0;
+        var right = height.Length - 1;
 
-        for (int i = 1; i < sortedHeight.Length; i++) {
-            var index = sortedHeight[i].Index;
+        while (left < right) {
+            maxArea = Math.Max(maxArea, (right - left) * Math.Min(height[left], height[right]));
 
-            smallestIndex = Math.Min(smallestIndex, index);
-            largestIndex  = Math.Max(largestIndex, index);
-
-            var maxWidth = Math.Max(index - smallestIndex, largestIndex - index);
-            maxArea = Math.Max(maxArea, maxWidth * sortedHeight[i].Value);
+            if (height[left] < height[right]) {
+                left++;
+            } else {
+                right--;
+            }
         }
 
         return maxArea;
