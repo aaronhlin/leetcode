@@ -1,5 +1,5 @@
 // Solution to Remove Nth Node From End of List problem on LeetCode
-// Time Complexity:  O(N + n) where N is the number of nodes in list
+// Time Complexity:  O(L) where L is the list length
 // Space Complexity: O(1)
 
 /* Definition for singly-linked list. */
